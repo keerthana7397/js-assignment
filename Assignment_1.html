@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Welcome to Javascript </title>
+</head>
+<body>
+<script>
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var now = new Date();
+var day = days[ now.getDay() ];
+var x=now.getHours();
+var t;
+if (x>12)
+{
+    t=x-12;
+}
+else
+{
+    t=x;
+}
+var time = t + "PM :" + now.getMinutes() + ":" + now.getSeconds();
+document.write("Today is:"+day);
+document.write("<br>");
+document.write(time);
+</script>
+<p id="demo"></p>
+</body>
+</html>
