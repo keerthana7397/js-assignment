@@ -1,27 +1,77 @@
-<html>
-<head>
-<title>Welcome to Javascript </title>
-</head>
-<body>
-<script>
-var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var now = new Date();
-var day = days[ now.getDay() ];
-var x=now.getHours();
-var t;
-if (x>12)
-{
-    t=x-12;
+Console in Javascript:
+In javascript, the console is an object which provides access to the browser debugging console. Hence it is mainly used by testers for debugging process.
+Console can be opened in web browser like chrome by using commands like Ctrl + Shift + K for windows.
+Different types of console are.
+log()
+error()
+warn()
+clear()
+time() and timeEnd()
+table()
+count()
+group() and groupEnd()
+custom console logs
+
+console.log()
+Mainly used to print the output to the console. We can use any datatype inside the log(), be it a string, array, object, boolean etc.
+Example: console.log('Welcome to the console');
+console.log(57);
+
+console.error()
+It is used to log error messages and is used for testing purposes. By default when an error occurs it is highlighted in red colour.
+Example: console.error('Oops! An error occured');
+
+console.warn()
+If any warning is to be given then it is by default highlighted in yellow colour. This warning is given by using console.warn();
+Example: console.warn('Warning! Memory exceeded!');
+
+console.clear()
+It is used to clear the console of any previous operations that are displayed. It will display a blank console.
+Example: console.clear();
+
+console.time() and console.timeEnd()
+It is used to calculate the amount of time spent by a block of code or function. They take a label which must be same, and the code inside can be anything.
+If the amount of code between the console.time() ans console.timeEnd() is increased the time is also increased. The time is calculated in terms of milliseconds.
+Example:
+console.time('abc'); 
+ function fun =  function(){ 
+     console.log('fun is running'); 
+ } 
+ function fun2 = function(){ 
+     console.log('fun2 is running..'); 
+ } 
+ fun(); // calling fun(); 
+ fun2(); // calling fun2(); 
+console.timeEnd('abc'); 
+
+
+console.table()
+It is used to generate a table inside the console. The input to this console must be in the form of an array or an object that is to be converted into a table.
+Example:
+console.table({'a':41, 'b':12, 'c':32});
+The first coloumn takes the first value and second column takes the second value.
+
+console.count()
+It is used to count the number of times the function is called or the number of times something is executed. It is useful in a for loop.
+Example:
+for(var i=0;i<5;i++){ 
+    console.count(i); 
 }
-else
-{
-    t=x;
-}
-var time = t + "PM :" + now.getMinutes() + ":" + now.getSeconds();
-document.write("Today is:"+day);
-document.write("<br>");
-document.write(time);
-</script>
-<p id="demo"></p>
-</body>
-</html>
+
+console.group() and console.groupEnd()
+group() and groupEnd() methods of the console object allows us to group contents in a separate block, which will be indented. 
+Just like the time() and the timeEnd() they also accepts label, again of same value.
+Example:
+console.group('simple'); 
+console.warn('warning!'); 
+console.error('error here'); 
+console.log('vivi vini vici'); 
+console.groupEnd('simple'); 
+
+Custom Console logs
+User can add Styling to the console logs in order to make logs Custom.
+The Syntax for it is to add the css styling as a parameter to the logs which will replace %c in the logs.
+Example:
+const spacing = '10px'; 
+const styles =  `padding: ${spacing}; background-color: white; color: green; font-style:italic; border: 1px solid black; font-size: 2em;`; 
+console.log('%cLearning about Consoles', styles);
