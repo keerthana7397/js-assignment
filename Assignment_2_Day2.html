@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Methods of String and Array</title>
+	</head>
+	<body>
+		<script>
+		//Return the ASCII value of the character present in the given index of the string
+		var str="Good Evening!";
+		var res=str.charCodeAt(4);
+		console.log(res);
+		
+		//Convert a ASCII value into a character
+		var str=String.fromCharCode(95);
+		console.log(str);
+		
+		/*Compares 2 strings in current locale
+		The res method returns a number indicating whether str comes before(-1), after(1) or is the same(0) as str2 in sort order.*/
+		var str="Just a string";
+		var str2="mask";
+		var res=str.localeCompare(str2)
+		console.log(res);
+		
+		//Returns a new string with the specified number of copies of an existing string
+		var str="Just a string.";
+		var res=str.repeat(3);
+		console.log(res);
+		
+		//The replace() method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Only the first instance of the value is replaced.
+		var str="Just a string.A normal string";
+		var res=str.replace("string","normal day");
+		console.log(res);
+		//The split() method is used to split a string into an array of substrings and returns the new array.
+		var str="Hi!Just a normal string";
+		var res=str.split(" ");
+		console.log(res);
+		var res=str.split();
+		//Returns original string
+		console.log(res);
+		var res=str.split("");
+		//Separate each character, including white-space
+		console.log(res);
+		//An integer that specifies the number of splits, items after the split limit will not be included in the array
+		var res=str.split(" ",2);
+		console.log(res);
+		
+		//Array Methods
+		
+		/*The fill() method fills the specified elements in an array with a static value.
+		Thismethod overwrites the original array*/
+		var a=["Jackfruit","Watermelon","Litchi","Apple","Guava"];
+		a.fill("Mango",3);
+		console.log(a);
+		
+		/*The every() method checks if all elements in an array pass a test.
+		If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)*/
+		var age=[12,43,56,3,18,23];
+		function checkAdult(age) 
+		{
+		  return age >= 18;
+		}
+		var res=age.every(checkAdult);
+		console.log(res);
+		
+		//The copyWithin() method copies array elements to another position in the array, overwriting the existing values.
+		var arr = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+		arr.copyWithin(2, 0, 2);
+		console.log(arr);
+		</script>
+	</body>
+</html>
