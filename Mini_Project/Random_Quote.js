@@ -7,8 +7,7 @@ async function fetchJokes(){
 
     //Calculate random index number to display random quote wrt the index
     let i=Math.ceil(Math.random()*(1644));
-
-    //Clear any pre-existing quote
+    
     var res=data[i-1].text;
 
     //Display the fetched random quote
